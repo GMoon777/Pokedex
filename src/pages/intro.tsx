@@ -1,7 +1,12 @@
+import { VideoPlayer } from "../components/VideoPlayer"
+import IntroVideo from "../assets/intro.webm"
+
 export const Intro = () => { 
     return (
         <div> 
-            INTRO
+             <VideoPlayer
+              url={IntroVideo}
+            />
         </div>
     )
 }
