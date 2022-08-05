@@ -1,5 +1,8 @@
 
 import Pokedex from "./assets/Pokedex.png"
+import { Pages } from "./pages"
+// import ReactAudioPlayer from "react-audio-player";
+// import Theme from './assets/theme.mp3'
 function App() {
 
   return (
@@ -7,14 +10,21 @@ function App() {
 
       <div className=" fixed ">
       <img src={Pokedex} alt="Pokedex" className=" z-[1] " />
-      <div className="bg-[#8BAC10] w-[300px] h-[235px] rounded-[20px] absolute z-[9999] top-[226px] left-[112px]" > </div>
+      <div className="bg-[#8BAC10] w-[300px] h-[235px] rounded-[20px] absolute z-[9999] top-[226px] left-[112px]" >
+        
+      <Pages />  </div>
+    
       </div>
 
-      <div className="flex top-[800px]">  
-  
+      {/* <div className="flex top-[800px]">  
+      <ReactAudioPlayer
+      src={Theme}
+      autoPlay
+      controls
+    />  */}
     
     </div>
-    </div>
+   
   )
 }
 
