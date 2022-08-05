@@ -1,8 +1,9 @@
 import ReactPlayer from "react-player";
-
 import type { ReactPlayerProps } from "react-player";
 
 export const VideoPlayer: React.FC<ReactPlayerProps> = props => {
+
+ 
   return (
     <ReactPlayer
     width="100%"
