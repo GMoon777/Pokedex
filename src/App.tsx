@@ -10,7 +10,7 @@ function App() {
 
       <div className=" fixed ">
       <img src={Pokedex} alt="Pokedex" className=" z-[1] min-w-[581px]" />
-      <div className="bg-[#8BAC10] w-[300px] h-[235px] rounded-[20px] absolute z-[9999] top-[28%] left-[20.5%] overflow-hidden" >
+      <div className="bg-[#8BAC10] w-[300px] h-[235px] rounded-[20px] absolute z-[9999] top-[28%] left-[20.5%] overflow-auto scrollbar-hide">
         
       <Pages />  </div>
     

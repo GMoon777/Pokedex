@@ -1,4 +1,4 @@
-import { PokemonType, Pokemon } from "../types";
+import { PokemonType, Pokemon, PokemonResponse } from "../types";
 import useFetch from "use-http";
 import { useState, useEffect } from "react";
 
@@ -25,22 +25,23 @@ export const Main = () => {
     while (num < 152) {
       const pokemonResponse = await get(`/pokemon-form/${num}/`);
       if (response.ok) {
-        const { name, sprites, types, order } = pokemonResponse;
+        console.log(pokemonResponse);
+        const { name, sprites, types, order } = pokemonResponse as PokemonResponse;
 
         let pokemonItem: Pokemon = {
           name: name,
           image: sprites.front_default,
           type: types[1]
-            ? [types[0].type.name + ",", types[1].type.name]
+            ? [types[0].type.name, types[1].type.name]
             : [types[0].type.name],
           index:
-            order < 10
+            (order < 10
               ? "#" + 0 + 0 + order
               : "" || order < 100
               ? "#" + 0 + order
               : "" || order < 1000
               ? "#" + order
-              : "",
+              : "") as Pokemon["index"],
         };
         pokeDataArray.push(pokemonItem);
       }
@@ -74,18 +75,27 @@ export const Main = () => {
     <div className=" font-MunroSmall">
       {pokemon.map((pokemon) => (
         <div
-          className=" flex flex-row items-center pl-2 pt-2"
+          className=" flex flex-col items-left pl-2 pr-2 pt-1 "
           key={pokemon.index}
-        >
+        >  
+        <div className="flex flex-row items-center">
+        {pokemon.index}
           <img
-            className="mr-2 h-[20px] w-[20px]"
+            className="mr-2 ml-2 h-[30px] w-[30px]"
             src={pokemon.image}
             alt={pokemon.name}
           />
-          {`${pokemon.index} ${pokemon.name} - ${pokemon.type[0]} ${
+        
+          {`${pokemon.name} - ${pokemon.type[0]} ${
             pokemon.type[1] !== undefined ? pokemon.type[1] : ""
           }`}
+
+         </div>
+     <div className="w-[100%] h-[1px] bg-zinc-800 mt-1"/>
+
+ 
         </div>
+        
       ))}
     </div>
   );
