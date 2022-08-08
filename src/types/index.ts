@@ -5,6 +5,11 @@ export interface Pokemon {
     type: [PokemonType] | [PokemonType, PokemonType];
   }
 
+  export interface PokemonListProps {
+    data: Pokemon[];
+    onClick: any;
+  }
+
   export enum PokemonType {
     Fire = 'fire',
     Grass = 'grass',
