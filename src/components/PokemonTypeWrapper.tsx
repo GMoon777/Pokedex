@@ -1,0 +1,12 @@
+import  React  from 'react'
+import { PokemonType } from '../types'
+import { setPokemonTypeColour } from '../utils/setPokemonTypeColour'
+export const PokemonTypeWrapper = (props: any) => {
+    return (
+    <div
+    className="flex ml-1 rounded-lg pl-[3px] pr-[3px] h-4 items-center justify-center w-14" 
+    style={{backgroundColor: setPokemonTypeColour(props.type)}}> 
+    {props.type}
+     </div>
+    )
+}

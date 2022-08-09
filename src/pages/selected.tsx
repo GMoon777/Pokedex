@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { PokemonTypeWrapper } from "../components/PokemonTypeWrapper";
 import { useFetchSelectedPokemon } from "../hooks/useFetchSelectedPokemon";
 import { formatPokemonHeight } from "../utils/formatPokemonHeight";
 import { formatPokemonWeight } from "../utils/formatPokemonWeight";
@@ -17,17 +18,20 @@ export const Selected = () => {
         src={selectedPokemon[0]?.sprites.front_default}
         alt={selectedPokemon[0]?.name}
       />
-
+            <div>{selectedPokemon[0]?.name} </div>
+      <div className="flex flex-row items-center justify-center mb-3">
+        <PokemonTypeWrapper type={selectedPokemon[0]?.types[0].type.name} />
+        <PokemonTypeWrapper type={selectedPokemon[0]?.types[1]?.type.name} />
+        </div>
       <div className="flex flex-row">
         <div className=" flex-col outline-dashed outline-1 outline-offset-4 mr-4 ml-2 ">
-          <div>{selectedPokemon[0]?.name} </div>
-          <div> #{selectedPokemon[0]?.order} </div>
+    
+          <div> #: {selectedPokemon[0]?.order} </div>
           <div> H: {pokemonHeight} </div>
           <div> W: {pokemonWeight} </div>
         </div>
         
         <div className=" flex flex-col outline-dashed outline-1 outline-offset-4 items-center">
-        <div className=""> Stats</div>
         
       <div className="flex flex-row items-center">
         <div className=" flex flex-col mr-4 ml-1 ">
