@@ -9,14 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tanstack/react-table": "^8.5.10",
     "autoprefixer": "^10.4.8",
     "postcss": "^8.4.14",
     "react": "^18.2.0",
     "react-audio-player": "^0.17.0",
     "react-dom": "^18.2.0",
     "react-player": "^2.10.1",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "use-http": "^1.0.26"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",
