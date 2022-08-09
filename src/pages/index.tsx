@@ -10,7 +10,7 @@ export const Pages: React.FC = () => {
     <Routes>
       <Route path={routes.intro} element={<Intro />} />
       <Route path={routes.main} element={<Main />} />
-      <Route path={routes.selected} element={<Selected />} />
+      <Route path={routes.pokemon(":id")} element={<Selected />} />
     </Routes>
   );
 };

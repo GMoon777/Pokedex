@@ -7,7 +7,7 @@ export interface Pokemon {
 
   export interface PokemonListProps {
     data: Pokemon[];
-    onClick: any;
+    onClick: (id: number) => void;
   }
 
   export enum PokemonType {
@@ -29,7 +29,7 @@ export interface Pokemon {
     Fairy = 'fairy',
   }
 
-  export interface PokemonResponse {
+  export interface PokemonFormResponse {
     "form_name": string,
     "form_names": string[],
     "form_order": number,
@@ -68,3 +68,112 @@ export interface Pokemon {
         "url": string
     }
 }
+
+export interface PokemonFullResponse {
+    height: number;
+    id: number;
+    is_default: boolean;
+    name: string;
+    order: number;
+    weight: number;
+    sprites: {
+      front_default: string;
+      versions: {
+        "generation-i": {
+          "red-blue": {
+            back_default: string;
+            back_gray: string;
+            back_transparent: string;
+            front_default: string;
+            front_gray: string;
+            front_transparent: string;
+          };
+          yellow: {
+            back_default: string;
+            back_gray: string;
+            back_transparent: string;
+            front_default: string;
+            front_gray: string;
+            front_transparent: string;
+          };
+        };
+      };
+    };
+    stats: [
+      {
+        base_stat: number;
+        effort: number;
+        stat: {
+          name: "hp";
+          url: string;
+        };
+      },
+      {
+        base_stat: number;
+        effort: number;
+        stat: {
+          name: "attack";
+          url: string;
+        };
+      },
+      {
+        base_stat: number;
+        effort: number;
+        stat: {
+          name: "defense";
+          url: string;
+        };
+      },
+      {
+        base_stat: number;
+        effort: number;
+        stat: {
+          name: "special-attack";
+          url: string;
+        };
+      },
+      {
+        base_stat: number;
+        effort: number;
+        stat: {
+          name: "special-defence";
+          url: string;
+        };
+      },
+      {
+        base_stat: number;
+        effort: number;
+        stat: {
+          name: "speed";
+          url: string;
+        };
+      }
+    ];
+    types:
+      | [
+          {
+            slot: 1;
+            type: {
+              name: PokemonType;
+              url: string;
+            };
+          }
+        ]
+      | [
+          {
+            slot: 1;
+            type: {
+              name: PokemonType;
+              url: string;
+            };
+          },
+          {
+            slot: 2;
+            type: {
+              name: PokemonType;
+              url: string;
+            };
+          }
+        ];
+  }
+  
