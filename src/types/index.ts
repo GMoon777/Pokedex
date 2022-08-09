@@ -3,6 +3,7 @@ export interface Pokemon {
     name: string;
     image: string;
     type: [PokemonType] | [PokemonType, PokemonType];
+    id: number;
   }
 
   export interface PokemonListProps {

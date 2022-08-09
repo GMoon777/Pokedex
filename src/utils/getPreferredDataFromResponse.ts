@@ -2,6 +2,7 @@ import {PokemonFullResponse, Pokemon} from '../types'
 
 export const getPreferredDataFromResponse = (res: PokemonFullResponse) => {
   return {
+    id: res.id,
     name: res.name,
     image: res.sprites.front_default,
     type: [

@@ -1,5 +1,6 @@
 body {
 	background: var(--bg-color);
+	font-family: "MunroSmall";
 }
 
 input[type="number"]::-webkit-outer-spin-button,

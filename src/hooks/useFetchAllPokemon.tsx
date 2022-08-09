@@ -25,7 +25,7 @@ export const useFetchAllPokemon = () => {
         }
         
         setIsIndividualPokemonLoading(true)
-        
+        // Promise.all only resolves once all of it's promises have resolved
         const eachPokemon = await Promise.all(newData.results.map((pokemon: BasePokemonResponse) => {
           // removes end "/"
           const url = pokemon.url.slice(0, pokemon.url.length - 1);
@@ -35,8 +35,7 @@ export const useFetchAllPokemon = () => {
           return fetch(API_URL + "/pokemon/" + matchedId).then(res => res.json()) as Promise<PokemonFullResponse>;
         }))
 
-        const data = eachPokemon.map(res => getPreferredDataFromResponse(res))
-                
+        const data = eachPokemon.map(res => getPreferredDataFromResponse(res))      
         setPokemonData(data)
         setIsIndividualPokemonLoading(false);
       },

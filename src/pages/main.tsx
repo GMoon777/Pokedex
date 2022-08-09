@@ -1,9 +1,9 @@
 import { PokemonList } from "../components/PokemonList";
 import { useFetchAllPokemon } from "../hooks/useFetchAllPokemon";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export const Main = () => {
-  const [pokemonData, isPokemonDataLoading] = useFetchAllPokemon()
+  const [pokemonData] = useFetchAllPokemon()
   
 
   let navigate = useNavigate();
@@ -13,7 +13,7 @@ export const Main = () => {
   };
   
   return (
-    <div className=" font-MunroSmall">
+    <div>
       <PokemonList 
         data={pokemonData}
         onClick={(id) => navigateToSelected(id)}

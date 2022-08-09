@@ -1,10 +1,10 @@
 
 import Pokedex from "./assets/Pokedex.png"
 import { Pages } from "./pages"
+import { useState } from "react";
 // import ReactAudioPlayer from "react-audio-player";
 // import Theme from './assets/theme.mp3'
 function App() {
-
   return (
     <div className="flex w-full h-full justify-center ">
 
