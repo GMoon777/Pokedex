@@ -1,5 +1,6 @@
 import { Pokemon, PokemonListProps, PokemonType } from "../types";
 import { useState } from "react";
+import { setPokemonTypeColour } from "../utils/setPokemonTypeColour";
 
 export const PokemonList = (props: PokemonListProps) => {
   const [searchInput, setSearchInput] = useState("");
@@ -29,11 +30,24 @@ export const PokemonList = (props: PokemonListProps) => {
                   src={pokemon.image}
                   alt={pokemon.name}
                 />
+             {pokemon.name}
+                <div
+                className="flex ml-1 rounded-lg pl-[3px] pr-[3px] h-4 items-center justify-center w-14" 
+                style={{backgroundColor: setPokemonTypeColour(pokemon.type[0])}}> 
+                 {pokemon.type[0]}
+                 </div>
+                 <div
+                className="flex ml-1 rounded-lg pl-[3px] pr-[3px] h-4 items-center justify-center w-14" 
+                style={{backgroundColor: setPokemonTypeColour(pokemon.type[1])}}> 
+                 {pokemon.type[1]}
+                 </div>
 
-                {`${pokemon.name} - ${pokemon.type[0]} ${
+                {/* {`${pokemon.name} - ${pokemon.type[0]} ${
                   pokemon.type[1] !== undefined ? pokemon.type[1] : ""
-                }`}
-              </div>
+                }`} */}
+                
+                </div>
+            
 
               <div className="mt-0 h-[0.5px] w-[100%] bg-zinc-800" />
               </button>
