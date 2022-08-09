@@ -3,3 +3,8 @@
 @import "./base.css";
 @import "./variables.css";
 @import "./tailwindcss.css";
+@font-face {
+    font-family: 'MunroSmall';
+    src: local('MunroSmall'), url("../fonts/MunroSmall.ttf") format('truetype');
+
+  }

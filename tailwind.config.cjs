@@ -7,8 +7,8 @@ const plugin = require("tailwindcss/plugin");
 module.exports = {
   content: [ "./src/**/*.{html,jsx,tsx}" ],
   theme: {
-    extend: {
-
+    fontFamily: {
+      "MunroSmall": [ "MunroSmall" ],
     }
   },
   plugins: [
