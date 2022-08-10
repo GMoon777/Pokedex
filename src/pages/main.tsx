@@ -3,9 +3,10 @@ import { useFetchAllPokemon } from "../hooks/useFetchAllPokemon";
 import { useNavigate } from 'react-router-dom'
 import { TiChevronLeft } from "react-icons/ti";
 
+
 export const Main = () => {
   const [pokemonData] = useFetchAllPokemon()
-  
+
   let navigate = useNavigate();
 
   const navigateToSelected = (id: number) => {
