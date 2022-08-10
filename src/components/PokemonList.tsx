@@ -2,11 +2,22 @@ import { Pokemon, PokemonListProps, PokemonType } from "../types";
 import { useState } from "react";
 import { setPokemonTypeColour } from "../utils/setPokemonTypeColour";
 import { PokemonTypeWrapper } from "./PokemonTypeWrapper";
+import select from '../assets/select.mp3'
+import useSound from 'use-sound';
 
 export const PokemonList = (props: PokemonListProps) => {
+
   const [searchInput, setSearchInput] = useState("");
+  const [play] = useSound(select);
+
+
+  const selectedPokemon = (id: number) => {
+    play()
+    props.onClick(id)
+  }
   return (
-    <div>
+    <div className="-mt-8">
+    
       <input
         type="text"
         placeholder="Search for a Pokemon"
@@ -27,7 +38,7 @@ export const PokemonList = (props: PokemonListProps) => {
               className=" items-left flex cursor-pointer select-none list-none flex-col pl-2 pr-2 pt-1 hover:bg-[#24796A]"
               key={pokemon.index}
             >
-              <button onClick={() => props.onClick(pokemon.id)}>
+              <button onClick={() => selectedPokemon(pokemon.id)}>
                 <div className="flex flex-row items-center">
                   {pokemon.index}
                   <img
@@ -45,6 +56,7 @@ export const PokemonList = (props: PokemonListProps) => {
             </li>
           ))}
       </ul>
+      
     </div>
   );
 };
