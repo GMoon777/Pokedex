@@ -6,7 +6,8 @@ import { PokemonTypeWrapper } from "./PokemonTypeWrapper";
 export const PokemonList = (props: PokemonListProps) => {
   const [searchInput, setSearchInput] = useState("");
   return (
-    <div>
+    <div className="-mt-8">
+    
       <input
         type="text"
         placeholder="Search for a Pokemon"
@@ -45,6 +46,7 @@ export const PokemonList = (props: PokemonListProps) => {
             </li>
           ))}
       </ul>
+      
     </div>
   );
 };

@@ -12,9 +12,15 @@ export const Intro = () => {
   return (
     <div>
         <button 
+        className=" bg-stone-400 fixed h-6 w-10 left-[60.5%] top-[33.5%] z-[9999] rounded-lg"
         onClick={() => navigateToMain()}>
-      <VideoPlayer url={IntroVideo} onEnded={() => navigateToMain()} />
-      </button>
+          <div className="text-center items-center justify-center">
+          skip
+          </div>
+        </button>
+      <VideoPlayer url={IntroVideo} 
+      onEnded={() => navigateToMain()} />
+  
     </div>
   );
 };

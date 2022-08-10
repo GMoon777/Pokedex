@@ -13,13 +13,14 @@ export const Main = () => {
   };
   
   return (
-    <div>
-    <TiChevronLeft className=" rotate-90 fixed left-[64%] top-[42.0%] z-[9999]"/>
-      <TiChevronLeft className=" -rotate-90 fixed left-[64%] top-[67.0%] z-[9999]"/>
+    <div className="h-auto min-h-[235px]">
+      <TiChevronLeft className=" rotate-90 sticky left-[92%] top-[2%] z-[9999]"/>
+      <TiChevronLeft className=" -rotate-90 sticky left-[92%] top-[92%] z-[9999]"/>
       <PokemonList 
         data={pokemonData}
         onClick={(id) => navigateToSelected(id)}
      />
+
     </div>
   );
 };
