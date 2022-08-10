@@ -1,19 +1,16 @@
 
 import Pokedex from "./assets/Pokedex.png"
 import { Pages } from "./pages"
-import { useState } from "react";
 import { NavBar } from "./components/NavBar";
-import { TiChevronLeft } from "react-icons/ti";
 
 // import ReactAudioPlayer from "react-audio-player";
 // import Theme from './assets/theme.mp3'
 function App() {
+
   return (
     <div className="flex w-full h-full justify-center ">
       <NavBar/>
-
-      <TiChevronLeft className=" rotate-90 absolute left-[64%] top-[30.5%] z-[9999]"/>
-      <TiChevronLeft className=" -rotate-90 absolute left-[64%] top-[45.0%] z-[9999]"/>
+  
       <div className=" fixed mt-24">
       <img src={Pokedex} alt="Pokedex" className=" z-[1] min-w-[581px]" />
       <div className="bg-[#8BAC10] w-[300px] h-[235px] rounded-[20px] absolute z-[9999] top-[28%] left-[20.5%] overflow-auto scrollbar-hide">
