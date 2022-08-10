@@ -1,4 +1,4 @@
-import Logo from "../assets/Navbar/logoalt2.png";
+import Logo from "../assets/NavBar/logoalt2.png";
 import Charmander from "../assets/NavBar/charmanderAlt.png";
 import Squirtle from "../assets/NavBar/squirtleAlt.png";
 import mainTheme from "../assets/maintheme.mp3";
