@@ -2,13 +2,13 @@ import { Pokemon, PokemonListProps, PokemonType } from "../types";
 import { useState } from "react";
 import { setPokemonTypeColour } from "../utils/setPokemonTypeColour";
 import { PokemonTypeWrapper } from "./PokemonTypeWrapper";
-import buttonShort from '../assets/buttonShort.mp3'
+import select from '../assets/select.mp3'
 import useSound from 'use-sound';
 
 export const PokemonList = (props: PokemonListProps) => {
 
   const [searchInput, setSearchInput] = useState("");
-  const [play] = useSound(buttonShort);
+  const [play] = useSound(select);
 
 
   const selectedPokemon = (id: number) => {
