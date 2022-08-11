@@ -1,6 +1,6 @@
 import ReactPlayer from "react-player";
 import type { ReactPlayerProps } from "react-player";
-
+import React from "react";
 export const VideoPlayer: React.FC<ReactPlayerProps> = props => {
 
  

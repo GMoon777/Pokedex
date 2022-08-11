@@ -1,20 +1,19 @@
-import  React  from 'react'
-import { PokemonType } from '../types'
-import { setPokemonTypeColour } from '../utils/setPokemonTypeColour'
-export const PokemonTypeWrapper = (props: any) => {
-    
-    if (props.type) {
-    return (
-    <div
-    className="flex ml-1 rounded-lg pl-[3px] pr-[3px] h-4 items-center justify-center w-14 select-none" 
-    style={{backgroundColor: setPokemonTypeColour(props.type)}}> 
-    {props.type}
-     </div>
-    )
-    }
-    else {
-        return (
-            <div></div>
-        )
-    }
+import React from "react";
+import { PokemonType } from "../types";
+import { setPokemonTypeColour } from "../utils/setPokemonTypeColour";
+interface PokemonTypeWrapperProps {
+  type: PokemonType | "any";
 }
+
+export const PokemonTypeWrapper = (props: PokemonTypeWrapperProps) => {
+
+    return (
+      <div
+        className="flex h-4 w-14 select-none items-center justify-center rounded-lg pl-[3px] pr-[3px]"
+        style={{ backgroundColor: setPokemonTypeColour(props.type) }}
+      >
+        {props.type}
+      </div>
+    );
+
+    };

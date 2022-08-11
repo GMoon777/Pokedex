@@ -3,18 +3,19 @@ import { PokemonTypeWrapper } from "../components/PokemonTypeWrapper";
 import { useFetchSelectedPokemon } from "../hooks/useFetchSelectedPokemon";
 import { formatPokemonHeight } from "../utils/formatPokemonHeight";
 import { formatPokemonWeight } from "../utils/formatPokemonWeight";
-import buttonShort from '../assets/buttonShort.mp3'
+import buttonShort from '../assets/Audio/Effects/buttonShort.mp3'
 import useSound from 'use-sound';
+import React from 'react'
 
 export const Selected = () => {
   const [play] = useSound(buttonShort);
   const params = useParams();
   const selectedPokemon = useFetchSelectedPokemon(params.id);
 
-  let pokemonHeight = formatPokemonHeight(selectedPokemon[0]?.height);
-    let pokemonWeight = formatPokemonWeight(selectedPokemon[0]?.weight);
+  const pokemonHeight = formatPokemonHeight(selectedPokemon[0]?.height);
+    const pokemonWeight = formatPokemonWeight(selectedPokemon[0]?.weight);
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const navigateToMain = () => {
     play()
@@ -37,9 +38,9 @@ export const Selected = () => {
         alt={selectedPokemon[0]?.name}
       />
             <div>{selectedPokemon[0]?.name} </div>
-      <div className="flex flex-row items-center justify-center mb-3">
-        <PokemonTypeWrapper type={selectedPokemon[0]?.types[0].type.name} />
-        <PokemonTypeWrapper type={selectedPokemon[0]?.types[1]?.type.name} />
+      <div className="flex flex-row items-center justify-center mb-3 space-x-1">
+        {selectedPokemon[0]?.types && <PokemonTypeWrapper type={selectedPokemon[0]?.types[0].type.name} />}
+        {selectedPokemon[0]?.types[1] && <PokemonTypeWrapper type={selectedPokemon[0]?.types[1].type.name} />}
         </div>
       <div className="flex flex-row">
         <div className=" flex-col outline-dashed outline-1 outline-offset-4 mr-2">

@@ -19,5 +19,6 @@ export const PokemonTypeStyle = {
     steel: '#B7B7CE',
     fairy: '#D685AD',
     dark: '#705746',
-    blank: "transparent"
+    blank: "transparent",
+    any: "white"
 }

@@ -8,6 +8,11 @@ interface BasePokemonResponse {
   name: string;
   url: string;
 }
+export const setPokemonGeneration = (generation: number) => {
+
+  return generation;
+}
+ 
 
 export const useFetchAllPokemon = () => {
   const [pokemonData, setPokemonData] = useState<Pokemon[]>([]);
@@ -30,7 +35,7 @@ export const useFetchAllPokemon = () => {
           // removes end "/"
           const url = pokemon.url.slice(0, pokemon.url.length - 1);
           // matches 1 or more digits at end ($) of string
-          const matchedId = /\d+$/.exec(url)![0];
+          const matchedId = /\d+$/.exec(url)?.[0];
 
           return fetch(API_URL + "/pokemon/" + matchedId).then(res => res.json()) as Promise<PokemonFullResponse>;
         }))
