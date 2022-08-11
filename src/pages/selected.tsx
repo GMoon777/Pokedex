@@ -3,7 +3,7 @@ import { PokemonTypeWrapper } from "../components/PokemonTypeWrapper";
 import { useFetchSelectedPokemon } from "../hooks/useFetchSelectedPokemon";
 import { formatPokemonHeight } from "../utils/formatPokemonHeight";
 import { formatPokemonWeight } from "../utils/formatPokemonWeight";
-import buttonShort from '../assets/buttonShort.mp3'
+import buttonShort from '../assets/Audio/Effects/buttonShort.mp3'
 import useSound from 'use-sound';
 import React from 'react'
 

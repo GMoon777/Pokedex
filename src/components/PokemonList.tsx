@@ -1,7 +1,7 @@
 import { PokemonListProps, PokemonType } from "../types";
 import React, { useState } from "react";
 import { PokemonTypeWrapper } from "./PokemonTypeWrapper";
-import select from "../assets/select.mp3";
+import select from "../assets/Audio/Effects/select.mp3";
 import useSound from "use-sound";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { FaSearch } from "react-icons/fa";
@@ -9,7 +9,7 @@ import * as Select from "@radix-ui/react-select";
 
 export const PokemonList = (props: PokemonListProps) => {
   const [selectedTypes, setSelectedTypes] = useState('any');
-  const [play] = useSound(select);
+  const [play] = useSound(select, { volume: 0.3 });
   const selectedPokemon = (id: number) => {
     play();
     props.onClick(id);
@@ -100,12 +100,6 @@ export const PokemonList = (props: PokemonListProps) => {
              pokemon.name.includes(nameInput || "") ||
         pokemon.index.includes(nameInput || "") 
       )
-
-                // pokemon.name.toLowerCase().includes(nameInput || "") ||
-                // pokemon.index.toLowerCase().includes(nameInput || "") ||
-                // (selectedTypes.toLowerCase() as PokemonType || "") 
-
-          
           .map((pokemon) => (
             <li
               className=" items-left flex cursor-pointer select-none list-none flex-col pl-2 pr-2 pt-1 hover:bg-[#24796A]"

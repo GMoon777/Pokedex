@@ -2,12 +2,12 @@ import { PokemonList } from "../components/PokemonList";
 import { useFetchAllPokemon } from "../hooks/useFetchAllPokemon";
 import { useNavigate } from 'react-router-dom'
 import { TiChevronLeft } from "react-icons/ti";
-
+import React from "react";
 
 export const Main = () => {
   const [pokemonData] = useFetchAllPokemon()
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const navigateToSelected = (id: number) => {
     return navigate("/" + id, { replace: true });

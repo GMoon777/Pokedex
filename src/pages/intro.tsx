@@ -2,12 +2,11 @@ import { VideoPlayer } from "../components/VideoPlayer";
 import IntroVideo from "../assets/intro.mp4";
 import { useNavigate } from "react-router-dom";
 import useSound from 'use-sound';
-import opening from '../assets/opening.mp3'
-import loaded from '../assets/loaded.mp3'
-
+import loaded from '../assets/Audio/Effects/loaded.mp3'
+import React from "react";
 export const Intro = () => {
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const navigateToMain = () => {
     play()
