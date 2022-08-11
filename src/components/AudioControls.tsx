@@ -1,4 +1,4 @@
-import { useSounds } from "../utils/useSounds";
+import { useSounds } from "../hooks/useSounds";
 import React, { useEffect } from "react";
 import { GiSpeaker, GiSpeakerOff } from "react-icons/gi";
 import { IoIosSkipForward } from "react-icons/io";
