@@ -2,6 +2,8 @@ import { PokemonTypeStyle } from "../constants/constants"
 
 export const setPokemonTypeColour = (type: string | undefined) => { 
     switch (type) {
+        case "any": 
+        return PokemonTypeStyle.any
         case "normal":
         return PokemonTypeStyle.normal;
         case "fighting":
