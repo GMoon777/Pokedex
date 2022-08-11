@@ -9,7 +9,7 @@ export const NavBar = () => {
     <div className=" flex h-20 w-full items-center justify-center bg-[#3D7DCA] shadow-md shadow-black">
 
 
-      <div className=" mr-20 flex h-full items-center">
+      <div className="flex h-full">
         <img className="mr-2 h-[80%]" src={Charmander} alt="Charmander" />
         <img className="h-[80%]" src={Logo} alt="logo" />
         <img className="ml-2 h-[80%]" src={Squirtle} alt="Squirtle" />
