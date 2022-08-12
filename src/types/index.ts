@@ -1,3 +1,8 @@
+export interface ScrollContextInterface {
+  atTop: boolean,
+  atBottom: boolean,
+ }
+
 export interface Pokemon {
     index: `#${number}${number}${number}`
     name: string;
