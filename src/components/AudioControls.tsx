@@ -12,7 +12,7 @@ export const AudioControls = () => {
       JSON.stringify({ isPlaying }, null, 2);
     }
     useEffect(() => {
-      play();
+      // play();
     }, [play]);
     return (
   

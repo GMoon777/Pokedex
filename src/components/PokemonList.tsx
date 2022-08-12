@@ -2,6 +2,7 @@ import { PokemonListProps, PokemonType } from "../types";
 import React, { useState } from "react";
 import { PokemonTypeWrapper } from "./PokemonTypeWrapper";
 import select from "../assets/Audio/Effects/select.mp3";
+import typeSelected from "../assets/Audio/Effects/typeSelected.mp3";
 import useSound from "use-sound";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { FaSearch } from "react-icons/fa";
@@ -9,18 +10,22 @@ import * as Select from "@radix-ui/react-select";
 
 export const PokemonList = (props: PokemonListProps) => {
   const [selectedTypes, setSelectedTypes] = useState('any');
-  const [play] = useSound(select, { volume: 0.3 });
+  const [playSelect] = useSound(select, { volume: 0.3 });
+  const [playSelectedType] = useSound(typeSelected, { volume: 0.3 });
   const selectedPokemon = (id: number) => {
-    play();
+    playSelect();
     props.onClick(id);
   };
+
+  const changeSelectedType = (selected: PokemonType | "any") => { 
+    setSelectedTypes(selected);
+    playSelectedType();
+  }
 
   interface PokemonInputForm {
     name?: string;
     type?: PokemonType;
   }
-
-  console.log(selectedTypes);
 
   const { register, handleSubmit, watch } = useForm<PokemonInputForm>();
 
@@ -50,9 +55,9 @@ export const PokemonList = (props: PokemonListProps) => {
         />
         <Select.Root
           defaultValue="any"
-          onValueChange={(value) => setSelectedTypes(value)}
+          onValueChange={(value) => changeSelectedType(value as PokemonType)}
         >
-          <Select.Trigger className="flex items-center -mt-1 ml-3" >
+          <Select.Trigger className="flex items-center -mt-1 ml-3"  >
             <Select.Value  />
             <Select.Icon/>
           </Select.Trigger>
@@ -72,7 +77,7 @@ export const PokemonList = (props: PokemonListProps) => {
             {Object.values(PokemonType).map(type => {
                 
                 return (
-                  <Select.Item key={type} value={type}>
+                  <Select.Item key={type} value={type} className="cursor-pointer hover:contrast-200">
                     <Select.ItemText>
                       <PokemonTypeWrapper type={type}/>
                         </Select.ItemText>
